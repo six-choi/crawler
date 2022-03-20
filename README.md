@@ -40,7 +40,94 @@ virtualenv를 사용하면
 
 라이브러리 버전을 새로 설치할 수 있음. 
 
+---
+(base) a666@ippeuniui-MacBook-Pro Desktop % cd learn_virtuaLenv
+(base) a666@ippeuniui-MacBook-Pro learn_virtuaLenv % mkdir django4_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtuaLenv % mkdir django2_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtuaLenv % ls -al
+total 0
+drwxr-xr-x   4 a666  staff   128 Mar 20 19:42 .
+drwx------@ 93 a666  staff  2976 Mar 20 19:38 ..
+drwxr-xr-x@  2 a666  staff    64 Mar 20 19:42 django2_project
+drwxr-xr-x@  2 a666  staff    64 Mar 20 19:41 django4_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtuaLenv % cd django2_project 
+(base) a666@ippeuniui-MacBook-Pro django2_project % ls
+(base) a666@ippeuniui-MacBook-Pro django2_project % python -m venv myenv
+(base) a666@ippeuniui-MacBook-Pro django2_project % ls -al
+total 0
+drwxr-xr-x@ 3 a666  staff   96 Mar 20 19:43 .
+drwxr-xr-x  4 a666  staff  128 Mar 20 19:42 ..
+drwxr-xr-x  6 a666  staff  192 Mar 20 19:43 myenv
+(base) a666@ippeuniui-MacBook-Pro django2_project % ./myenv/bin/activate
+zsh: permission denied: ./myenv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro django2_project % ls
+myenv
+(base) a666@ippeuniui-MacBook-Pro django2_project % ls -al
+total 0
+drwxr-xr-x@ 3 a666  staff   96 Mar 20 19:43 .
+drwxr-xr-x  4 a666  staff  128 Mar 20 19:42 ..
+drwxr-xr-x  6 a666  staff  192 Mar 20 19:43 myenv
+(base) a666@ippeuniui-MacBook-Pro django2_project % ls -l
+total 0
+drwxr-xr-x  6 a666  staff  192 Mar 20 19:43 myenv
+(base) a666@ippeuniui-MacBook-Pro django2_project % ./myenv/bin/activate
+zsh: permission denied: ./myenv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro django2_project % myenv/bin/activate
+zsh: permission denied: myenv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro django2_project % . venv/bin/activate
+.: no such file or directory: venv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro django2_project % . myenv/bin/activate
+(myenv) (base) a666@ippeuniui-MacBook-Pro django2_project % ls
+myenv
+(myenv) (base) a666@ippeuniui-MacBook-Pro django2_project % pip install django
+Collecting django
+  Downloading Django-4.0.3-py3-none-any.whl (8.0 MB)
+     |████████████████████████████████| 8.0 MB 6.6 MB/s 
+Collecting backports.zoneinfo; python_version < "3.9"
+  Downloading backports.zoneinfo-0.2.1-cp38-cp38-macosx_10_14_x86_64.whl (35 kB)
+Collecting sqlparse>=0.2.2
+  Downloading sqlparse-0.4.2-py3-none-any.whl (42 kB)
+     |████████████████████████████████| 42 kB 2.5 MB/s 
+Collecting asgiref<4,>=3.4.1
+  Downloading asgiref-3.5.0-py3-none-any.whl (22 kB)
+Installing collected packages: backports.zoneinfo, sqlparse, asgiref, django
+Successfully installed asgiref-3.5.0 backports.zoneinfo-0.2.1 django-4.0.3 sqlparse-0.4.2
+WARNING: You are using pip version 20.1.1; however, version 22.0.4 is available.
+You should consider upgrading via the '/Users/a666/Desktop/learn_virtuaLenv/django2_project/myenv/bin/python -m pip install --upgrade pip' command.
+(myenv) (base) a666@ippeuniui-MacBook-Pro django2_project % django-admin
 
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+Note that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).
+(myenv) (base) a666@ippeuniui-MacBook-Pro django2_project % 
+---
 
 yield, with
 
