@@ -201,6 +201,10 @@ You should consider upgrading via the '/Users/a666/Desktop/learn_virtuaLenv/new_
 
   ---
   
+  장고는?
+  
+  https://tutorial.djangogirls.org/ko/
+  
 yield, with
 
 GitHub Action
