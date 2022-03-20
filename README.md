@@ -129,6 +129,29 @@ Note that only Django core commands are listed as settings are not properly conf
 (myenv) (base) a666@ippeuniui-MacBook-Pro django2_project % 
 ---
 
+---
+  (base) a666@ippeuniui-MacBook-Pro Desktop % cd learn_virtualenv
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % ls
+django2_project	django4_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % cd django4_project
+(base) a666@ippeuniui-MacBook-Pro django4_project % ls
+(base) a666@ippeuniui-MacBook-Pro django4_project % python -m venv myenv
+(base) a666@ippeuniui-MacBook-Pro django4_project % pip install "django<3.0"
+Collecting django<3.0
+  Downloading Django-2.2.27-py3-none-any.whl (7.5 MB)
+     |████████████████████████████████| 7.5 MB 7.2 MB/s 
+Collecting sqlparse>=0.2.2
+  Using cached sqlparse-0.4.2-py3-none-any.whl (42 kB)
+Requirement already satisfied: pytz in /Users/a666/opt/anaconda3/lib/python3.8/site-packages (from django<3.0) (2020.1)
+Installing collected packages: sqlparse, django
+Successfully installed django-2.2.27 sqlparse-0.4.2
+(base) a666@ippeuniui-MacBook-Pro django4_project % django-admin version
+2.2.27
+(base) a666@ippeuniui-MacBook-Pro django4_project % 
+---
+  
+  이런식으로 다른 버전의 라이브러리를 해당 프로젝트별로 만들어 줄 수 있음. 
+  
 yield, with
 
 GitHub Action
