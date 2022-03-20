@@ -152,6 +152,55 @@ Successfully installed django-2.2.27 sqlparse-0.4.2
   
   이런식으로 다른 버전의 라이브러리를 해당 프로젝트별로 만들어 줄 수 있음. 
   
+  ---
+  전달한 것을 받아서 설치하기 
+  
+  (base) a666@ippeuniui-MacBook-Pro django4_project % pip freeze > requirements.txt
+(base) a666@ippeuniui-MacBook-Pro django4_project % ls
+myenv			requirements.txt
+(base) a666@ippeuniui-MacBook-Pro django4_project % deactivate
+DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.
+(base) a666@ippeuniui-MacBook-Pro django4_project % cd ..
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % ls
+django2_project	django4_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % mkdir new_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % ls
+django2_project	django4_project	new_project
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % mv ../django2_project/requirements.txt .
+mv: rename ../django2_project/requirements.txt to ./requirements.txt: No such file or directory
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % mv ../django4_project/requirements.txt .
+mv: rename ../django4_project/requirements.txt to ./requirements.txt: No such file or directory
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % cp ../django4_project/requirements.txt .
+cp: ../django4_project/requirements.txt: No such file or directory
+(base) a666@ippeuniui-MacBook-Pro learn_virtualenv % cd new_project
+(base) a666@ippeuniui-MacBook-Pro new_project % cp ../django4_project/requirements.txt .
+(base) a666@ippeuniui-MacBook-Pro new_project % ls
+requirements.txt
+(base) a666@ippeuniui-MacBook-Pro new_project % python -m venv myenv
+(base) a666@ippeuniui-MacBook-Pro new_project % ./myenv/bin/avtivate.fish
+zsh: no such file or directory: ./myenv/bin/avtivate.fish
+(base) a666@ippeuniui-MacBook-Pro new_project % . venv/bin/activate
+.: no such file or directory: venv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro new_project % . mvenv/bin/activate
+.: no such file or directory: mvenv/bin/activate
+(base) a666@ippeuniui-MacBook-Pro new_project % ls
+myenv			requirements.txt
+(base) a666@ippeuniui-MacBook-Pro new_project % . myenv/bin/activate
+(myenv) (base) a666@ippeuniui-MacBook-Pro new_project % pip install -r requirments.txt
+ERROR: Could not open requirements file: [Errno 2] No such file or directory: 'requirments.txt'
+WARNING: You are using pip version 20.1.1; however, version 22.0.4 is available.
+You should consider upgrading via the '/Users/a666/Desktop/learn_virtuaLenv/new_project/myenv/bin/python -m pip install --upgrade pip' command.
+(myenv) (base) a666@ippeuniui-MacBook-Pro new_project % pip install -r requirements.txt
+Collecting alabaster==0.7.12
+  Downloading alabaster-0.7.12-py2.py3-none-any.whl (14 kB)
+ERROR: Could not find a version that satisfies the requirement anaconda-client==1.7.2 (from -r requirements.txt (line 2)) (from versions: 1.1.1, 1.2.2)
+ERROR: No matching distribution found for anaconda-client==1.7.2 (from -r requirements.txt (line 2))
+WARNING: You are using pip version 20.1.1; however, version 22.0.4 is available.
+You should consider upgrading via the '/Users/a666/Desktop/learn_virtuaLenv/new_project/myenv/bin/python -m pip install --upgrade pip' command.
+(myenv) (base) a666@ippeuniui-MacBook-Pro new_project % 
+
+  ---
+  
 yield, with
 
 GitHub Action
